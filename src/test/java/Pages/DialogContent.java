@@ -23,18 +23,66 @@ public class DialogContent extends Parent{
     @FindBy (css = "div[class='urls']>p")
     public List<WebElement> sitemapTitlesList_x;
 
-
     @FindBy (css = "div[class='category-wrapper box']>div[class^='sub-category']>a")
     public List<WebElement> subheadingsListVerify;
 
+    @FindBy (xpath = "//a[.='Giriş Yap']")
+    private WebElement signInBtn;
 
+    @FindBy (xpath = "//span[text()='Tümünü Reddet']")
+    private WebElement tReddetBtn;
+
+    @FindBy (xpath = "(//button[text()='Daha Sonra'])[1]")
+    private WebElement dahaSonraBtn;
+
+    @FindBy(id = "email")
+    private WebElement email;
+
+    @FindBy(id = "password")
+    private WebElement password;
+
+    @FindBy(id = "loginButton")
+    private WebElement loginBtn;
+
+    @FindBy (css = "a[title='Hesabım']")
+    private WebElement dashboard;
+
+    @FindBy (xpath = "(//div[@class='track']/span)[10]")
+    private WebElement filtre9PuanVeUzeri;
+
+    @FindBy (css = "input[id='freeShippingOption']+span")
+    private WebElement filtreUcretsizKargo;
+
+    @FindBy (css = "input[data-point='5']+span+span")
+    private WebElement filtreUrunPuan5Yildiz;
+
+    @FindBy (xpath = "(//div[@class='priceInput']/input)[1]")
+    private WebElement filtreFiyatAraligiEnAz;
+
+    @FindBy (xpath = "(//div[@class='priceInput']/input)[2]")
+    private WebElement filtreFiyatAraligiEnCok;
+
+    @FindBy (id = "priceSearchButton")
+    private WebElement filtreFiyatAraligiBtn;
+
+    @FindBy (css = "i[class='iconsBasketWhite']")
+    private WebElement sepetBtn;
+
+    @FindBy (xpath = "(//span[@class='removeProd svgIcon svgIcon_trash'])[1]")
+    private WebElement silBtn1;
+
+    @FindBy (css = "span[id='deleteBtnDFLB']")
+    private WebElement silBtn2;
 
 
     WebElement myElement;
     public void findAndSend(String strElement, String value){
         switch (strElement)
         {
-//            case "" : myElement = ;break;
+            case "email" : myElement = email ;break;
+            case "password" : myElement = password ;break;
+            case "filtreFiyatAraligiEnAz" : myElement = filtreFiyatAraligiEnAz ;break;
+            case "filtreFiyatAraligiEnCok" : myElement = filtreFiyatAraligiEnCok ;break;
         }
 
         sendKeysFunction(myElement, value);
@@ -44,6 +92,15 @@ public class DialogContent extends Parent{
         switch (strElement)
         {
             case "sitemapLink" : myElement = sitemapLink; break;
+            case "signInBtn" : myElement = signInBtn; break;
+            case "tReddetBtn" : myElement = tReddetBtn; break;
+            case "dahaSonraBtn" : myElement = dahaSonraBtn; break;
+            case "loginBtn" : myElement = loginBtn; break;
+            case "sepetBtn" : myElement = sepetBtn; break;
+            case "filtre9PuanVeUzeri" : myElement = filtre9PuanVeUzeri; break;
+            case "filtreUcretsizKargo" : myElement = filtreUcretsizKargo; break;
+            case "filtreFiyatAraligiBtn" : myElement = filtreFiyatAraligiBtn; break;
+            case "filtreUrunPuan5Yildiz" : myElement = filtreUrunPuan5Yildiz; break;
 
         }
 
@@ -53,11 +110,20 @@ public class DialogContent extends Parent{
     public void assertElementVisible(String strElement){
         switch (strElement)
         {
-//            case "" : myElement = ;break;
+            case "dashboard" : myElement = dashboard ;break;
 
         }
 
         verifyElementVisible(myElement);
     }
+
+    public WebElement getMyElement(String strElement) {
+        switch (strElement){
+            case "loginBtn":myElement=loginBtn;break;
+
+        }
+        return myElement;
+    }
+
 
     }
