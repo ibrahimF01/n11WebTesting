@@ -74,7 +74,40 @@ public class DialogContent extends Parent{
     @FindBy (css = "span[id='deleteBtnDFLB']")
     private WebElement silBtn2;
 
+    // omerAvci
 
+    @FindBy (xpath = "//div[@class='dn-slide-buttons horizontal']//button[contains(text(),'Evet')]")
+    private WebElement popup_Oa;
+
+    @FindBy (xpath = "//span[contains(text(),'Tümünü Reddet')]")
+    private WebElement reject_Oa;
+
+    @FindBy (css = "[id='searchData']")
+    private WebElement searchBox_Oa;
+
+    @FindBy (css = "[class='iconsSearch']")
+    private WebElement searchClick_Oa;
+
+    @FindBy (css = "[class='proName']")
+    public WebElement MainTitle;
+
+    @FindBy (id = "shareWinTooltipClose")
+    public WebElement closePp;
+
+    @FindBy (xpath = "div[class='product-add-cart']>button[title='Sepete Ekle']")
+    public WebElement addToCCCart;
+
+    @FindBy (css = "[class='unf-sell-sub-title']")
+    public WebElement subTitle;
+
+    @FindBy (css = "[class='newPrice']")
+    public WebElement newPrice;
+
+    @FindBy (css = "[class='unf-info-desc']")
+    public WebElement detailProduct;
+
+    @FindBy (css = "[class='cargo-price']")
+    public WebElement cargoPrice;
     WebElement myElement;
     public void findAndSend(String strElement, String value){
         switch (strElement)
@@ -83,6 +116,7 @@ public class DialogContent extends Parent{
             case "password" : myElement = password ;break;
             case "filtreFiyatAraligiEnAz" : myElement = filtreFiyatAraligiEnAz ;break;
             case "filtreFiyatAraligiEnCok" : myElement = filtreFiyatAraligiEnCok ;break;
+            case "searchBox_Oa" : myElement = searchBox_Oa;break;
         }
 
         sendKeysFunction(myElement, value);
@@ -101,6 +135,11 @@ public class DialogContent extends Parent{
             case "filtreUcretsizKargo" : myElement = filtreUcretsizKargo; break;
             case "filtreFiyatAraligiBtn" : myElement = filtreFiyatAraligiBtn; break;
             case "filtreUrunPuan5Yildiz" : myElement = filtreUrunPuan5Yildiz; break;
+            case "popup_Oa" : myElement = popup_Oa; break;
+            case "reject_Oa" : myElement = reject_Oa; break;
+            case "searchClick_Oa" : myElement = searchClick_Oa; break;
+            case "closePp" : myElement = closePp; break;
+            case "addToCCCart" : myElement = addToCCCart; break;
 
         }
 
